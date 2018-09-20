@@ -17,3 +17,10 @@ oc login
 username
 password
 ```
+
+### Add Docker images to project
+Auf der Webseite einfach auch Add to Project klicken und dann bei "Name" den richtigen Namen vom Image angeben.  
+
+Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile daneben (im Overview Fenster).
+
+"Application scaling can happen extremely quickly because OpenShift is just launching new instances of an existing image, especially if that image is already cached on the node."
