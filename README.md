@@ -27,12 +27,12 @@ Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile danebe
 Wenn man zwei Pods eingestellt hat und eine killt, dann kümmert sich OpenShift automatisch darum wieder eine zweite Instanz zu kreieren.
 
 ### Routes
-Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button "Add Route".  
-Anschließend ist die Applikation über den angegeben Link aufrufbar.
+Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button **"Add Route"**.  
+Anschließend ist die Applikation über den angegeben Link aufrufbar, den man über **Application/** findet.
 
 ### Building Docker Image from source code
-Um ein Dockerimage von einem vorhandene Source Code zu erstellen, geht man wieder zu add to project und dann drückt man statt "Deploy Image" auf "Browse Catalogue".  
-Dort wählt man die Sprache aus und fügt anschließend einen Link zum GitHub Repo ein.
+Um ein Dockerimage von einem vorhandenen Source Code zu erstellen, geht man wieder zu **"Add to project"** und dann drückt man statt **"Deploy Image"** auf **"Browse Catalogue"**.  
+Dort wählt man die Sprache aus und fügt anschließend einen _Link zum GitHub Repo_ ein.
 
 # Deploying applications from images
 Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben schon beschrieben.  
