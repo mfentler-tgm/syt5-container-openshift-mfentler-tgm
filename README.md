@@ -24,3 +24,10 @@ Auf der Webseite einfach auch Add to Project klicken und dann bei "Name" den ric
 Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile daneben (im Overview Fenster).
 
 "Application scaling can happen extremely quickly because OpenShift is just launching new instances of an existing image, especially if that image is already cached on the node."
+
+### Self Healing
+Wenn man zwei Pods eingestellt hat und eine killt, dann kümmert sich OpenShift automatisch darum wieder eine zweite Instanz zu kreieren.
+
+### Routes
+Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button "Add Route".  
+Anschließend ist die Applikation über den angegeben Link aufrufbar.
