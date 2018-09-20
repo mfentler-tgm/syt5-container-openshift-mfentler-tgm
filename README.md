@@ -17,7 +17,7 @@ Die CLI wird verwendet um
         password
 
 ### Add Docker images to project
-Auf der Webseite einfach auch Add to Project klicken und dann bei "Name" den richtigen Namen vom Image angeben.  
+Auf der Webseite einfach auch **"Add to Project"** klicken und dann bei "Name" den richtigen Namen vom Image angeben.  
 
 Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile daneben (im Overview Fenster).
 
@@ -41,4 +41,15 @@ Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben
 - Build and deploy from source code contained in a Git repository using a Source-to-Image builder.
 - Build and deploy from source code contained in a Git repository from a Dockerfile.
 
+So erstellt man Projekte über die cli:
+        oc new-project <projectname>
+Um neue Applikationen zu erstellen:
+        oc new-app
 
+#### Deploy from existing docker image
+Über die Webseite kann man wie im vorherigen Teil beschrieben, bestehende Dockerfiles hinzufügen.  
+Dort kann man aus den zwei Optionen **"Image Stream Tag"** und **"Image Name"** auswählen.  
+
+Die erste Option wählt man, wenn das Image schon einmal in das OpenShift Cluster importiert wurde oder man die Möglichkeit "Source-to-Image" verwendet hat, dann kann man dort den _Image-Stream-Tag_ eingeben.
+
+Letzteres wählt man, wenn das Docker-Image auf einer externen Image-Registry liegt.
