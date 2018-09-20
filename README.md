@@ -12,11 +12,9 @@ Die CLI wird verwendet um
 - Scripting OpenShift Operations
 - Wenn man die Webconsole nicht benutzen kann.
 
-```
-oc login
-username
-password
-```
+        oc login
+        username
+        password
 
 ### Add Docker images to project
 Auf der Webseite einfach auch Add to Project klicken und dann bei "Name" den richtigen Namen vom Image angeben.  
@@ -39,7 +37,8 @@ Dort wählt man die Sprache aus und fügt anschließend einen Link zum GitHub Re
 # Deploying applications from images
 Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben schon beschrieben.  
 
-    Deploy an application from an existing Docker-formatted image.
-    Build and deploy from source code contained in a Git repository using a Source-to-Image builder.
-    Build and deploy from source code contained in a Git repository from a Dockerfile.
+- Deploy an application from an existing Docker-formatted image.
+- Build and deploy from source code contained in a Git repository using a Source-to-Image builder.
+- Build and deploy from source code contained in a Git repository from a Dockerfile.
+
 
