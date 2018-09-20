@@ -41,7 +41,7 @@ Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben
 - Build and deploy from source code contained in a Git repository using a Source-to-Image builder.
 - Build and deploy from source code contained in a Git repository from a Dockerfile.
 
-So erstellt man Projekte über die cli:
+<a name="neuProjekt"></a>So erstellt man Projekte über die cli:
 
         oc new-project <projectname>
 Um neue Applikationen zu erstellen:
@@ -107,3 +107,12 @@ Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schrei
 
 Um die Applikationen anschließend wieder zu [löschen](#loeschen), muss das einzeln für jede gemacht werden.(app=block1, app=block2)
 
+# Connecting to a database using port forwarding
+Ausgangslage ist ein [neues Projekt](#neuProjekt). 
+
+Um die Datenbank zu erstellen reicht folgender langer Command:
+
+        oc new-app postgresql-ephemeral --name database --param DATABASE_SERVICE_NAME=database  
+        --param POSTGRESQL_DATABASE=sampledb --param POSTGRESQL_USER=username  
+        --param POSTGRESQL_PASSWORD=password
+Durch diese Methode wird allerdings nur eine lokale Datenbank erstellt -> Wenn die Datenbank neu gestartet wird ist alles weg.
