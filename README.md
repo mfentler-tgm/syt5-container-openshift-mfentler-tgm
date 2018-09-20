@@ -162,7 +162,8 @@ Wenn man fertig ist muss noch der port forwarding Prozess gekillt werden der im 
 
 ## Transfering files in and out of container
 ### Downloading files/folder from a container
-Für den Download aus einem Container benützt man folgende Befehle. Die destination auf der lokalen Maschine muss existieren.
+Für den Download aus einem Container benützt man folgende Befehle. Die Destination auf der lokalen Maschine muss existieren.  
+Existierende Files mit dem selben Namen werden überschrieben.
 
         oc rsync <pod-name>:/remote/dir/filename ./local/dir
         // oder Folder
