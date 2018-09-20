@@ -93,3 +93,14 @@ Anschließend kann man danach filtern:
 Um diese Ressourcen nun zu **löschen**:
 
         oc delete all --selector app=blog-django-py
+### Import application images
+Wenn man mehrere Applikationen deployen will, dann sollte man, bevor man das tut die Application Images herunterladen. Denn so kann man sicherstellen, dass das Label von diesem Image-Stream nicht gesetzt wurde.  
+Es kann zu einem Problem führen, wenn man mehrere Applikationen deployed und dann die eine, auf die mit dem Label referenziert wird löscht. Dann werden nämlich alle mit diesem Label gelöscht.
+
+Daher wird das Image zuerst erstelt:
+
+        oc import-image openshiftkatacoda/blog-django-py
+Anschließend kann man eine neue Applikation erstellen:
+
+        oc new-app blog-django-py --name blog-1
+Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schreibt kann man erkennen, dass es die Dinge wie "deploymentconfigs", "replicationcontrollers", etc. jeweils doppelt gibt. Nur den **Image-Stream**  gibt es einmal.
