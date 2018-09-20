@@ -31,3 +31,7 @@ Wenn man zwei Pods eingestellt hat und eine killt, dann kümmert sich OpenShift 
 ### Routes
 Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button "Add Route".  
 Anschließend ist die Applikation über den angegeben Link aufrufbar.
+
+### Building Docker Image from source code
+Um ein Dockerimage von einem vorhandene Source Code zu erstellen, geht man wieder zu add to project und dann drückt man statt "Deploy Image" auf "Browse Catalogue".  
+Dort wählt man die Sprache aus und fügt anschließend einen Link zum GitHub Repo ein.
