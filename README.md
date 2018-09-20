@@ -35,3 +35,11 @@ Anschließend ist die Applikation über den angegeben Link aufrufbar.
 ### Building Docker Image from source code
 Um ein Dockerimage von einem vorhandene Source Code zu erstellen, geht man wieder zu add to project und dann drückt man statt "Deploy Image" auf "Browse Catalogue".  
 Dort wählt man die Sprache aus und fügt anschließend einen Link zum GitHub Repo ein.
+
+# Deploying applications from images
+Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben schon beschrieben.  
+
+    Deploy an application from an existing Docker-formatted image.
+    Build and deploy from source code contained in a Git repository using a Source-to-Image builder.
+    Build and deploy from source code contained in a Git repository from a Dockerfile.
+
