@@ -108,6 +108,11 @@ Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schrei
 Um die Applikationen anschließend wieder zu [löschen](#loeschen), muss das einzeln für jede gemacht werden.(app=block1, app=block2)
 
 # Connecting to a database using port forwarding
+## Wichtigste Commands
+        oc rsh <pod-name>
+        oc port-forward <pod-name> <local-port>:<remote-port>
+        // bzw
+        oc port-forward <pod-name> :<remote-port>
 Ausgangslage ist ein [neues Projekt](#neuProjekt). 
 
 Um die Datenbank zu erstellen reicht folgender langer Command:
@@ -141,7 +146,7 @@ Anschließend führt man diesen Befehl aus:
 Lokal wird die Datenbank auf Port 15432 angesprochen, falls schon eine PostgreSQL Datenbank auf 5432 läuft.
         
         //Oder wie in unserem Beispiel mit der Postgre Datenbank (Port 5432);
-        oc port-forward $POD 15432:5432 &
+        oc port-forward $POD 15432:5432
 Wenn man nicht weis, welche Ports frei sind, dann kann man auch einen **Random-Port statt dem "local-port"** verwenden.  
 Im **Output** von diesem Command kann man sehen **welcher Port** verwendet wird.
 
