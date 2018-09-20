@@ -78,7 +78,7 @@ Siehe [oben](#route)
 Hostnamen anzeigen:
 
         oc get route/blog-django-py // route/<appliaction-name>
-### Deleting the application
+### <a name="loeschen"></a>Deleting the application
 List all created ressources
 
         oc get all -o name
@@ -103,4 +103,7 @@ Daher wird das Image zuerst erstelt:
 Anschließend kann man eine neue Applikation erstellen:
 
         oc new-app blog-django-py --name blog-1
-Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schreibt kann man erkennen, dass es die Dinge wie "deploymentconfigs", "replicationcontrollers", etc. jeweils doppelt gibt. Nur den **Image-Stream**  gibt es einmal.
+Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schreibt kann man erkennen, dass es die Dinge wie "deploymentconfigs", "replicationcontrollers", etc. jeweils doppelt gibt. Nur den **Image-Stream**  gibt es einmal.  
+
+Um die Applikationen anschließend wieder zu [löschen](#loeschen), muss das einzeln für jede gemacht werden.(app=block1, app=block2)
+
