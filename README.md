@@ -143,7 +143,7 @@ Lokal wird die Datenbank auf Port 15432 angesprochen, falls schon eine PostgreSQ
         //Oder wie in unserem Beispiel mit der Postgre Datenbank (Port 5432);
         oc port-forward $POD 15432:5432 &
 Wenn man nicht weis, welche Ports frei sind, dann kann man auch einen **Random-Port statt dem "local-port"** verwenden.  
-Im Output von diesem Command kann man sehen welcher Port verwendet wird.
+Im **Output** von diesem Command kann man sehen **welcher Port** verwendet wird.
 
         oc port-forward <pod-name> :<remote-port>
 
@@ -151,3 +151,6 @@ Wenn man sich jetzt mit der Datenbank dann verbinden will muss man den Port expl
 Das könnte dann so aussehen:
         
         psql sampledb username --host=127.0.0.1 --port=15432
+Wenn man fertig ist muss noch der port forwarding Prozess gekillt werden der im Hintergrund aktiv ist:
+        
+        kill %1
