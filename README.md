@@ -5,9 +5,15 @@ OpenShift is often referred to as a container application
 platform in that it is a platform designed for the development and deployment 
 of containers.
 
+OpenShift kann entweder über die CLI oder über eine Webansicht bearbeitet werden.
+
 Die CLI wird verwendet um 
 - direkt mit dem Projekt Source Code zu arbeiten
 - Scripting OpenShift Operations
 - Wenn man die Webconsole nicht benutzen kann.
 
-  oc login
+```
+oc login
+username
+password
+```
