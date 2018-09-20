@@ -26,7 +26,7 @@ Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile danebe
 ### Self Healing
 Wenn man zwei Pods eingestellt hat und eine killt, dann kümmert sich OpenShift automatisch darum wieder eine zweite Instanz zu kreieren.
 
-### Routes
+### <a name="Routes"></a>
 Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button **"Add Route"**.  
 Anschließend ist die Applikation über den angegeben Link aufrufbar, den man über **Application/** findet.
 
@@ -53,3 +53,17 @@ Dort kann man aus den zwei Optionen **"Image Stream Tag"** und **"Image Name"** 
 Die erste Option wählt man, wenn das Image schon einmal in das OpenShift Cluster importiert wurde oder man die Möglichkeit "Source-to-Image" verwendet hat, dann kann man dort den _Image-Stream-Tag_ eingeben.
 
 Letzteres wählt man, wenn das Docker-Image auf einer externen Image-Registry liegt.
+
+### Creating a external route
+Siehe [oben](#Routes)
+
+### Deleting the application
+List all created ressources
+        oc get all -o name
+Der command listet mir alle Ressourcen auf. Sobald es aber mehrere Applikationen gibt muss unterschieden werden was zu was gehört. Das macht man, in dem man am besten nach dem Label sucht(vorher beim Erstellen gesetzt). Dazu wählt man sich eine der vorher aufgelisteten Ressourcen aus und schreibt:
+        oc describe <route/blog-django-py>
+Der Befehl oben gibt einem viele Informationen über die Ressource aus. Unteranderem auch das Label (app=???)  
+Anschließend kann man danach filtern:
+        oc get all --selector app=blog-django-py -o name
+Um diese Ressourcen nun zu **löschen**:
+        oc delete all --selector app=blog-django-py
