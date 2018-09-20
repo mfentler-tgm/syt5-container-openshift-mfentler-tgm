@@ -34,7 +34,7 @@ Anschließend ist die Applikation über den angegeben Link aufrufbar, den man ü
 Um ein Dockerimage von einem vorhandenen Source Code zu erstellen, geht man wieder zu **"Add to project"** und dann drückt man statt **"Deploy Image"** auf **"Browse Catalogue"**.  
 Dort wählt man die Sprache aus und fügt anschließend einen _Link zum GitHub Repo_ ein.
 
-# Deploying applications from images
+## Deploying applications from images
 Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben schon beschrieben.  
 
 - Deploy an application from an existing Docker-formatted image.
@@ -107,8 +107,8 @@ Wenn man nun eine Zweite Applikation erstellt und danach folgenden Befehl schrei
 
 Um die Applikationen anschließend wieder zu [löschen](#loeschen), muss das einzeln für jede gemacht werden.(app=block1, app=block2)
 
-# Connecting to a database using port forwarding
-## Wichtigste Commands
+## Connecting to a database using port forwarding
+### Wichtigste Commands
         oc rsh <pod-name>
         oc port-forward <pod-name> <local-port>:<remote-port>
         // bzw
@@ -159,3 +159,14 @@ Das könnte dann so aussehen:
 Wenn man fertig ist muss noch der port forwarding Prozess gekillt werden der im Hintergrund aktiv ist:
         
         kill %1
+
+## Transfering files in and out of container
+### Downloading files/folder from a container
+Für den Download aus einem Container benützt man folgende Befehle. Die destination auf der lokalen Maschine muss existieren.
+
+        oc rsync <pod-name>:/remote/dir/filename ./local/dir
+        // oder Folder
+        oc rsync <pod-name>:/remote/dir/. ./local/dir
+        
+        
+        
