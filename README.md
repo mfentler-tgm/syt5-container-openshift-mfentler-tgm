@@ -48,7 +48,8 @@ Um neue Applikationen zu erstellen:
 
         oc new-app
 
-#### Deploy from existing docker image
+### Deploy from existing docker image
+#### Webseite
 Über die Webseite kann man wie im vorherigen Teil beschrieben, bestehende Dockerfiles hinzufügen.  
 Dort kann man aus den zwei Optionen **"Image Stream Tag"** und **"Image Name"** auswählen.  
 
@@ -56,9 +57,27 @@ Die erste Option wählt man, wenn das Image schon einmal in das OpenShift Cluste
 
 Letzteres wählt man, wenn das Docker-Image auf einer externen Image-Registry liegt.
 
+#### CLI
+Um zu überprüfen, ob der Name vom Image (openshiftkatacoda/blog-django-py) auch valid ist kann man das in der cli so überprüfen:
+
+        oc new-app --search openshiftkatacoda/blog-django-py // oc new-app --search <image-name>
+Um das Image dann zu deployen:
+
+        oc new-app openshiftkatacoda/blog-django-py 
+
+Der Name für die Applikation wird von OpenShift automatisch ausgewählt, genauso wie in der Webversion.  
+Will man ihn selber bestimmen, dann muss man den vorigen Befehl mit der Option **"--name"** ausführen.
+
+Anschließend kann man der Applikation noch eine externe Route hinzufügen.
 ### Creating a external route
+#### Webseite
 Siehe [oben](#route)
 
+#### CLI
+        oc expose service/blog-django-py // service/<application-name>
+Hostnamen anzeigen:
+
+        oc get route/blog-django-py // route/<appliaction-name>
 ### Deleting the application
 List all created ressources
 
