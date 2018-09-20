@@ -42,8 +42,10 @@ Es gibt drei Möglichkeiten um Applikationen zu deployen. Zwei davon wurden oben
 - Build and deploy from source code contained in a Git repository from a Dockerfile.
 
 So erstellt man Projekte über die cli:
+
         oc new-project <projectname>
 Um neue Applikationen zu erstellen:
+
         oc new-app
 
 #### Deploy from existing docker image
@@ -59,11 +61,16 @@ Siehe [oben](#route)
 
 ### Deleting the application
 List all created ressources
+
         oc get all -o name
-Der command listet mir alle Ressourcen auf. Sobald es aber mehrere Applikationen gibt muss unterschieden werden was zu was gehört. Das macht man, in dem man am besten nach dem Label sucht(vorher beim Erstellen gesetzt). Dazu wählt man sich eine der vorher aufgelisteten Ressourcen aus und schreibt:
+Der command listet mir alle Ressourcen auf. Sobald es aber mehrere Applikationen gibt muss unterschieden werden was zu was gehört.  
+Das macht man, in dem man am besten nach dem Label sucht(vorher beim Erstellen gesetzt). Dazu wählt man sich eine der vorher aufgelisteten Ressourcen aus und schreibt:
+
         oc describe <route/blog-django-py>
 Der Befehl oben gibt einem viele Informationen über die Ressource aus. Unteranderem auch das Label (app=???)  
 Anschließend kann man danach filtern:
+
         oc get all --selector app=blog-django-py -o name
 Um diese Ressourcen nun zu **löschen**:
+
         oc delete all --selector app=blog-django-py
