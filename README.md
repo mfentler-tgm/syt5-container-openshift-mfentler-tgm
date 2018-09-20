@@ -132,3 +132,16 @@ Um eine Shell im selben Container wie die Datenbank zu öffen und das nachher zu
         oc rsh $POD
         ps x
 Dort kann man nun mit dem **"psql"** command an der Datenbank herumspielen. Um aus der Shell wieder rauszukommen benuzt man **"\exit"**.
+
+### Remote Connection
+Um die Datenbank auch von einem Laptop in einer Remote Verbindung zu erreichen muss man Port Forwarding benutzen. Dazu muss auf der Applikation eine Route angelegt sein. 
+Anschließend führt man diesen Befehl aus:
+
+        oc port-forward <pod-name> <local-port>:<remote-port>
+Lokal wird die Datenbank auf Port 15432 angesprochen, falls schon eine PostgreSQL Datenbank auf 5432 läuft.
+        
+        //Oder wie in unserem Beispiel mit der Postgre Datenbank (Port 5432);
+        oc port-forward $POD 15432:5432 &
+Wenn man nicht weis, welche Ports frei sind, dann kann man auch einen **Random-Port statt dem "local-port"** verwenden.
+
+        oc port-forward <pod-name> :<remote-port>
