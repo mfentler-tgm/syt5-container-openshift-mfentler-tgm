@@ -26,7 +26,7 @@ Um Anwendungen zu skalieren erhöht man die "Pod-Anzahl" über die Pfeile danebe
 ### Self Healing
 Wenn man zwei Pods eingestellt hat und eine killt, dann kümmert sich OpenShift automatisch darum wieder eine zweite Instanz zu kreieren.
 
-### <a name="Routes"></a>
+### <a name="route">Routes</a>
 Um auf diese Applikationen von außen zuzugreifen muss man eine Route hinzufügen. Das macht man einfach über den Button **"Add Route"**.  
 Anschließend ist die Applikation über den angegeben Link aufrufbar, den man über **Application/** findet.
 
@@ -55,7 +55,7 @@ Die erste Option wählt man, wenn das Image schon einmal in das OpenShift Cluste
 Letzteres wählt man, wenn das Docker-Image auf einer externen Image-Registry liegt.
 
 ### Creating a external route
-Siehe [oben](#Routes)
+Siehe [oben](#route)
 
 ### Deleting the application
 List all created ressources
