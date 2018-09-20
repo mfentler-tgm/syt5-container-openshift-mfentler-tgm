@@ -115,4 +115,20 @@ Um die Datenbank zu erstellen reicht folgender langer Command:
         oc new-app postgresql-ephemeral --name database --param DATABASE_SERVICE_NAME=database  
         --param POSTGRESQL_DATABASE=sampledb --param POSTGRESQL_USER=username  
         --param POSTGRESQL_PASSWORD=password
-Durch diese Methode wird allerdings nur eine lokale Datenbank erstellt -> Wenn die Datenbank neu gestartet wird ist alles weg.
+Durch diese Methode wird allerdings nur eine lokale Datenbank erstellt -> Wenn die Datenbank neu gestartet wird ist alles weg.  
+Sobald dieser Command exited ist die Datenbank fertig und bereit:
+
+        oc rollout status dc/database
+Wenn man die Datenbank mit der FrontEnd-Web-Applikation verbinden will, dann muss man sie auf der Web-Applikation manuell einrichten.
+
+Um herauszufinden wo die Datenbank läuft um sich dann dort hin zu verbinden:
+
+        oc get pods --selector app=database
+Um leichter auf den Namen der Datenbank zu referenzieren kann man sich diesen in eine Umgebungsvariable speichern:
+
+        POD=`oc get pods --selector app=database -o custom-columns=name:.metadata.name --no-headers`; echo $POD
+Um eine Shell im selben Container wie die Datenbank zu öffen und das nachher zu validieren benutzt man die Befehle:
+
+        oc rsh $POD
+        ps x
+Dort kann man nun mit dem **"psql"** command an der Datenbank herumspielen. Um aus der Shell wieder rauszukommen benuzt man **"\exit"**.
